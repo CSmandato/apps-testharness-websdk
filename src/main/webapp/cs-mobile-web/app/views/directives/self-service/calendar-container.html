@@ -1,0 +1,11 @@
+
+
+<div>
+  <!--<div ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>-->
+  <div id="calendar" data-ng-if="message.messageData.button.length === 0" ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+  <div data-ng-show="message.messageData.button.length > 0">
+    <div class="list-group self-service-menu-group">
+      <a href="" style="text-align:center;" data-ng-click="menuSelect(button.value, button.name)" data-ng-repeat="button in message.messageData.button" class="list-group-item">{{button.name}}</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+#input-container {
+  border-top: 1px solid #ccc;
+}
+
+#input-left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  font-size: 1.5em;
+  width: 15%;
+  padding-top: 12px;
+  text-align: center;
+}
+@media only screen 
+and (min-width : 600px) {
+  #input-left {
+    width: 10%;
+    
+      i {
+        font-size: 1.2em;
+      }
+  }
+}
+#input-left a {
+  color: #888;
+  cursor: default;
+}
+#input-left a:hover {
+  color: #000;
+}
+
+#input-center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 15%;
+  width: 70%;
+  text-align: center;
+}
+@media only screen 
+and (min-width : 600px) {
+  #input-center {
+    left: 10%;
+    width: 80%;
+  }
+}
+
+#input-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 85%;
+  width: 15%;
+  text-align: center;
+  display: table;
+  height:100%;
+
+  #send-btn-wrapper {
+    color: #fff;
+    background: #0e9c49;
+    display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+
+    #send-btn-container {
+
+      #send-btn {
+
+      }
+    }
+  }
+  
+@media only screen 
+and (min-width : 600px) {
+  #input-right {
+   left: 90%;
+   width: 10%;
+  }
+}
+  #send-btn-wrapper:hover {
+    background: #037a34;
+  }
+
+  #microphone {
+    font-size: 1.5em;
+    padding-top: 14px;
+  }
+}
+
+#input-right a {
+  color: #888;
+  cursor: default;
+}
+#input-right a:hover {
+  color: #000;
+}
+#input-container #input-center input {
+  width: 100%;
+  height: 34px;
+  font-size: 14px;
+  line-height: 1.42857;
+  border: none;
+  background: transparent;
+}
+
+#input-container #input-center input:focus {
+  outline: none !important;
+}
+
+#agent-typing-container {
+  float: left;
+  margin-top: -20px;
+  margin-left: 10px;
+}
+
+#agent-typing-text {
+  font-size: 10px;
+  color: #aaa;
+}

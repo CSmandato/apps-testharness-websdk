@@ -1,0 +1,81 @@
+#message-list {
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    //margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px dotted #ccc;
+
+    .message-icon-container {
+      width: 12%;
+      display:table-cell;
+      vertical-align: top
+    }
+    @media only screen
+and (min-width : 600px) {
+	  .message-icon-container {
+         width: 9%;
+      }
+	}
+    .message-info-container {
+      width: 88%;
+      display:table-cell;
+      vertical-align: top;
+      padding-top: 8px;
+      padding-left: 5px;
+      padding-right: 5px;
+
+        &.user {
+          text-align: right;
+        }
+
+      .message-timestamp {
+        font-size: 12px;
+        color: #999;
+      }
+
+      .message-info {
+
+        p {
+          text-align: left;
+          display:inline;
+          margin: 0;
+          color: #333;
+          font-size: 14px;
+          line-height: 1.2em;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          -ms-word-break: break-all;
+          word-break: break-word;
+          -ms-hyphens: auto;
+          -moz-hyphens: auto;
+          -webkit-hyphens: auto;
+          hyphens: auto;
+        }
+      }
+    }
+
+    .article-link-message {
+      text-align:center;
+      cursor: pointer;
+      padding: 3px 8px;
+    }
+  }
+
+  li:last-child {
+    border-bottom: none;
+  }
+
+  #message-list-scroll-bottom {
+    margin: 0px;
+  }
+
+  @media print {
+    .chat {
+      visibility: visible;
+    }
+  }
+}

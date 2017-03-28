@@ -1,0 +1,39 @@
+<div class="container-fluid self-service-conversation-list-container" id="self-service-conversation-list-container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+            <div id="self-service-conversation-list">
+                <ul id="printThis" class="chat">
+
+                    <li data-ng-repeat="item in selfServiceMessages track by $index" data-ng-class="item.messageType != 'Mobile' ? 'right clearfix' : 'left clearfix' ">
+
+                        <span data-ng-if="item.messageType !== 'article'">
+                            <span data-ng-class="item.messageType != 'Mobile' ? 'chat-img pull-right' : 'chat-img pull-left'">
+                                <img data-ng-if="item.messageType === 'Auto Response'" ng-src="images/conversation/smiley.png"/>
+                                <img data-ng-if="item.messageType === 'Agent'" ng-src="images/conversation/agent.png"/>
+                                <img data-ng-if="item.messageType === 'Mobile'" ng-src="images/conversation/user.png"/>
+                            </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small data-ng-class="item.messageType !== 'Mobile' ? 'pull-left clear-left' : 'pull-right clear-right'"
+                                           class="bold">
+                                        <span class="fa fa-clock-o"></span>
+                                        {{ item.createTstamp | date:'MM/dd/yyyy @ h:mma' }}
+                                    </small>
+                                </div>
+                                <p data-ng-class="item.messageType != 'Mobile' ? 'pull-left clear-left' : 'pull-right clear-right'">
+                                    {{item.messageText}}
+                                </p>
+                            </div>
+                        </span>
+
+
+                        <span data-ng-if="item.messageType == 'article'">
+                            <!-- <a style="text-align:center;" data-ng-click="articleSelect(item)">{{item.articleTitle}}</a> -->
+                            <a href="#/articles/{{ item.articleId }}" style="text-align:center;">{{item.articleTitle}}</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

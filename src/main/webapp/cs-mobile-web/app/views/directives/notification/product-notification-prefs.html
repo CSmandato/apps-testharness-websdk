@@ -1,0 +1,37 @@
+<div id="product-notification-prefs-container">
+    <h4>Why Opt-in?</h4>
+    <p>Receive agent responses and resume chat sessions at your convenience</p>
+    <form data-ng-submit="savePrefs()" name="notifcation-prefs-form">
+        <div class="form-group top-buffer">
+            <div class="col-xs-3"><label>Email</label></div>
+                <div class="col-xs-9 col-sm-8 input-group">
+                    <span class="input-group-addon">
+                       <input type="checkbox" data-ng-model="emailPrefs.active" data-ng-checked="emailPrefs.active" id="notification-prefs-email-chkbx">
+                    </span>
+                        <input type="email" class="form-control" placeholder="Enter email address." data-ng-model="emailPrefs.value" id="notification-prefs-email-input"
+                               data-ng-required="emailPrefs.active">
+
+            </div><!-- /input-group -->
+        </div>
+        <div class="col-xs-6 col-xs-offset-3 input-group">
+            <button type="submit" class="btn btn-primary btn-sm btn-block" id="notification-prefs-submit-btn">Save</button>
+        </div>
+    </form>
+    <hr />
+    <div>
+        <h4>Browser Notifications</h4>
+        <div>
+            <p>We use browser-based notifications so you can receive an alert from an agent when chat is hidden.</p>
+        </div>
+        <div data-ng-if="browserNotificationsSet === true">
+            <p><strong data-ng-if="browserNotificationsEnabled === true">
+                Browser notifications are currently enabled 
+            </strong>
+            <strong data-ng-if="browserNotificationsEnabled === false">
+                Browser notifications are currently disabled 
+            </strong>
+             for this application. To change this setting please refer to your browsers help section.</p>
+        </div>
+    </div>
+    <loading data-visible="loading" data-show-text="true" data-loading-message="Saving"></loading>
+</div>

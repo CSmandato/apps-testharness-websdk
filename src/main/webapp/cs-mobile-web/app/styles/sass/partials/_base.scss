@@ -1,0 +1,132 @@
+#app-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+}
+
+.clear-right{
+  clear:right;
+}
+
+.clear-left{
+  clear:left;
+}
+
+.truncate {
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.nopadding {
+  padding:0 !important;
+}
+
+.nomargin {
+  margin:0 !important;
+}
+
+.top-buffer {
+  margin-top: 15px !important;  
+}
+
+.side-buffer {
+  margin-left: 10px !important; 
+  margin-right: 10px !important;  
+}
+
+conversations found
+.form-control {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.faq-container-margin {
+  margin-top: -20px;
+}
+
+@media screen {
+  #printSection {
+    display: none;
+  }
+}
+
+@media print {
+  body * {
+    visibility:hidden;
+  }
+  #printSection, #printSection * {
+    visibility:visible;
+  }
+  #printSection {
+    position:absolute;
+    left:0;
+    top:0;
+  }
+}
+
+a {
+  color: #0e9c49;
+}
+a:hover, a:focus {
+  color: #037a34;
+}
+
+.text-primary {
+    color: #0e9c49;
+}
+
+button:focus, button:active,
+.btn:focus, .btn.focus,
+.btn:active:focus, .btn:active.focus,
+.btn.active:focus, .btn.active.focus {
+  outline: none;
+}
+
+button[type=submit]:not(.btn-sm) {
+  padding: 8px 12px;
+  font-size: 16px;
+}
+
+button.btn-sm {
+  font-size: 14px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #0e9c49;
+  border-color: #0e9c49;
+}
+.btn-primary.active.focus,
+.btn-primary.active:focus,
+.btn-primary.active:hover,
+.btn-primary.focus:active,
+.btn-primary:active:focus,
+.btn-primary:active:hover {
+  color: #fff;
+  background-color: #008a41;
+  border-color: #008a41;
+}
+.btn-primary[disabled]:hover, 
+.btn-primary[disabled]:focus {
+  color: #fff;
+  background-color: #42ae6f;
+  border-color: #42ae6f;
+}
+.btn-primary:focus,.btn-primary:hover {
+  background-color:#008a41;
+  border-color:#008a41;
+  background-position:0 -15px;
+}
+.btn-primary.active,.btn-primary:active {
+  background-color:#008a41;
+  border-color:#008a41;
+}

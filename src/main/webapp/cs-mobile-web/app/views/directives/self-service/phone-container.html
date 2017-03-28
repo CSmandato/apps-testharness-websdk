@@ -1,0 +1,27 @@
+<div class="container-fluid" style="text-align: center">
+  <form data-ng-submit="send()">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+
+        <!-- User Phone Number -->
+        <div class="form-group" data-ng-class="error ? 'has-error' : ''">
+          <input type="tel"
+                 style="background: #fff"
+                 pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}"
+                 data-ng-model="phoneNumber"
+                 name="phone"
+                 id="input-field"
+                 class="form-control"
+                 placeholder="Phone# e.g.555-555-5555"
+                 data-ng-required="true"
+                 data-ng-readonly="mobile === true ? true : false"
+                 data-ng-keydown="enter($event)"
+                 autofocus
+            />
+        </div>
+      </div>
+      <hr/>
+    </div>
+    <product-numeric-only-keypad></product-numeric-only-keypad>
+  </form>
+</div>

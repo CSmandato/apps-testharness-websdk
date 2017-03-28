@@ -1,0 +1,38 @@
+<div class="container-fluid" style="text-align: center">
+  <form data-ng-submit="send()">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+
+        <div style="height: 45px;">
+          <div class="alert alert-danger" role="alert" data-ng-show="error" style="padding: 7px;">
+            <p>{{ errorMessage }}</p>
+          </div>
+        </div>
+
+        <!-- User Number -->
+        <div class="form-group" data-ng-class="error ? 'has-error' : ''">
+          <div class="col-xs-12">
+            <div class="input-group">
+              <input type="number"
+                     style="background: #fff"
+                     data-ng-model="number"
+                     pattern="\d*"
+                     name="number"
+                     id="input-field"
+                     class="form-control"
+                     placeholder="Numeric input only"
+                     data-ng-required="true"
+                     data-ng-keydown="enter($event)"
+                     string-to-number
+                     autofocus
+                />
+                <span class="input-group-btn">
+                  <input class="btn" data-ng-class="error ? 'btn-danger' : 'btn-primary'" data-ng-disabled="sendBtnDisable"  type="submit" value="Send"/>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <p data-ng-if="messagelistctrl.loadingMessages">Loading Messages</p>
+        <ul id="message-list" data-ng-if="!messagelistctrl.loadingMessages">
+            <li data-ng-repeat="message in messagelistctrl.messages">
+                <agent-message data-ng-if="message.messageType === 'Agent'" data-message="message"></agent-message>
+                <auto-message data-ng-if="message.messageType === 'Auto Response'" data-message="message"></auto-message>
+                <user-message data-ng-if="message.messageType === 'Mobile'" data-message="message"></user-message>
+                <article-message data-ng-if="message.messageType === 'article'" data-message="message"></article-message>
+            </li>
+            <product-self-serve-menu data-ng-if="currentWidget === 'menu'"></product-self-serve-menu>
+            <product-self-serve-content-menu data-ng-if="currentWidget === 'ssc-menu'"></product-self-serve-content-menu>
+            <product-calendar-container data-ng-if="currentWidget === 'calendar'"></product-calendar-container>
+            <product-spinner-container data-ng-if="currentWidget === 'spinner'"></product-spinner-container>
+            <product-alpha-num-container data-ng-if="currentWidget === 'alpha-num'"></product-alpha-num-container>
+            <product-knowledge-base></product-knowledge-base>
+
+            <div data-ng-if="!nativeSelfService">
+                <product-date-picker-container data-ng-if="currentWidget === 'date-picker'"></product-date-picker-container>
+                <product-phone-container data-ng-if="currentWidget === 'telephone'"></product-phone-container>
+                <product-decimal-container data-ng-if="currentWidget === 'decimal'"></product-decimal-container>
+                <product-numeric-with-symbols-container data-ng-if="currentWidget === 'numeric-with-symbols'"></product-numeric-with-symbols-container>
+                <product-numeric-only-container data-ng-if="currentWidget === 'numeric-only'"></product-numeric-only-container>
+                <product-credit-card-expiry data-ng-if="currentWidget === 'expiry'"></product-credit-card-expiry>
+            </div>
+
+            <!--
+            <div data-ng-if="nativeSelfService && mobile">
+              <product-native-telephone data-ng-if="currentWidget === 'telephone'"></product-native-telephone>
+              <product-native-date-picker data-ng-if="currentWidget === 'date-picker'"></product-native-date-picker>
+              <product-native-expiry data-ng-if="currentWidget === 'expiry'"></product-native-expiry>
+              <product-native-spinner-container data-ng-if="currentWidget === 'spinner'"></product-native-spinner-container>
+              <product-native-decimal-container data-ng-if="currentWidget === 'decimal'"></product-native-decimal-container>
+              <product-native-numeric-with-symbols-container data-ng-if="currentWidget === 'numeric-with-symbols'"></product-native-numeric-with-symbols-container>
+              <product-native-numeric-only-container data-ng-if="currentWidget === 'numeric-only'"></product-native-numeric-only-container>
+            </div>
+            -->
+
+            <div data-ng-if="nativeSelfService && !mobile">
+                <product-phone-container data-ng-if="currentWidget === 'telephone'"></product-phone-container>
+                <product-native-date-picker data-ng-if="currentWidget === 'date-picker'"></product-native-date-picker>
+                <product-credit-card-expiry data-ng-if="currentWidget === 'expiry'"></product-credit-card-expiry>
+                <product-native-spinner-container data-ng-if="currentWidget === 'spinner'"></product-native-spinner-container>
+                <product-decimal-container data-ng-if="currentWidget === 'decimal'"></product-decimal-container>
+                <product-numeric-with-symbols-container data-ng-if="currentWidget === 'numeric-with-symbols'"></product-numeric-with-symbols-container>
+                <product-numeric-only-container data-ng-if="currentWidget === 'numeric-only'"></product-numeric-only-container>
+            </div>
+            <li id="message-list-scroll-bottom"></li>
+        </ul>
+        <survey></survey>
+        <product-knowledge-base></product-knowledge-base>
+    </div>
+    <loading data-visible="messagelistctrl.loading"></loading>
+</div>

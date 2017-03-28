@@ -1,0 +1,67 @@
+<div>
+    <div data-ng-if="!minimized">
+        <div id="header">
+            <div id="header-global-btn-wrapper">
+                <div id="global-btns-left-wrapper">
+                    <div id="global-btns-left-container" class="global-btn-toolbar" data-ng-show="!mobile">
+                        <a class="global-btn print ng-scope" title="Print" data-ng-if="btnEnable.print && !mobile" data-ng-click="print()" id="user-input-print-btn">
+                            Print
+                        </a>
+                    </div>
+                </div>
+                <div id="global-btns-right-wrapper">
+                    <div id="global-btns-right-container" class="global-btn-toolbar">
+                        <a class="global-btn" data-ng-if="btnEnable.toggle && !mobile" data-ng-click="toggle()">
+                            <img src="images/btn-minimize.svg" title="Minimize" />
+                        </a>
+                        <a class="global-btn" data-ng-if="btnEnable.close && !mobile" data-ng-click="close()">
+                            <img src="images/btn-close.svg" title="End" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="header-navbar-wrapper">
+                <div id="header-navbar-container">
+                    <div id="nav-left">
+                        <a data-ng-if="btnEnable.back" data-ng-click="back()">
+                            <img src="images/btn-back.svg" id="back-btn-img" class="svg" title="Back" />
+                        </a>
+                    </div>
+                    <div id="nav-center">
+                        <div class="header-title">{{title}}</div>
+                    </div>
+                    <div id="nav-right">
+                        <a data-ng-if="btnEnable.resolve" data-ng-click="resolve()">
+                            Resolve
+                        </a>
+                        <a data-ng-if="btnEnable.agentChat" data-ng-click="agentChat()">
+                            Agent
+                        </a>
+                        <a data-ng-if="btnEnable.prefs" data-ng-click="prefs()">
+                            <i class="fa fa-gear" data-ng-click="prefs()" title="Preferences"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-ng-if="minimized">
+        <div id="header-minimized-wrapper">
+            <div id="header-minimized-container">
+                <div id="title-container">
+                    <div id="title">
+                        <a data-ng-if="btnEnable.toggle" data-ng-click="toggle()">{{title}}</a>
+                    </div>
+                </div>
+            </div>
+            <div id="maximize-btn-wrapper">
+                <div id="maximize-btn-container">
+                    <a id="maximize-btn" title="Maximize" data-ng-if="btnEnable.toggle" data-ng-click="toggle()">
+                        Maximize
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

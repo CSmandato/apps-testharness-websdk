@@ -1,0 +1,37 @@
+<div class="modal fade" id="surveyModal" tabindex="-1" role="dialog" aria-labelledby="surveyModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="text-align: center; background: #78B843; color: white; border-top-left-radius: 5px;  border-top-right-radius: 5px;">
+        <h4 class="modal-title" id="surveyModalLabel">{{ currentQuestion.question }}</h4>
+      </div>
+      <div class="modal-body" style="padding-top: 0; padding-bottom: 0;">
+
+        <div class="row">
+          <ul class="list-group" style="margin-top: 0px; margin-bottom: 0;">
+            <li class="list-group-item" data-ng-repeat="answer in currentQuestion.answers track by $index">
+              <div class="radio" style="margin-top: 5px; margin-bottom: 5px;">
+                <label>
+                  <input type="radio" name="surveyRadios" id="answers-{{$index}}" data-ng-model="currentQuestion.answer" value="{{answer}}" >
+                  {{ answer }}
+                </label>
+              </div>
+            </li>
+            <li class="list-group-item" style="background: #EBEBEB; text-align: center;">
+              <span style="color: #999999">Thank You!</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group btn-group-justified">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default" data-dismiss="modal" data-ng-click="cancelSurvey()">Cancel</button>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-default" data-ng-click="finishSurvey()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

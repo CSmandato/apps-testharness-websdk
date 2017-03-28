@@ -1,0 +1,36 @@
+<div class="container-fluid" id="product-menu-container">
+    <div class="row"><!-- Product Style Menu -->
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+            <ul class="product-menu">
+                <li id="menu-item-{{name}}" class="col-xs-6 product-menu-item" data-ng-repeat="item in menuItems" data-ng-click="changeRoute(item)" style="text-align: center">
+                    <div data-ng-if="item.badge != '0'">
+                        <div class="product-menu-item-spacer">
+                            <button class="btn btn-default" style="text-align: left" id="menu-item-{{item.name}}-btn-b">
+                                <img ng-src="{{ item.img }}" alt="{{ item.imgAlt }}" width="100%">
+                                <span class="badge">{{ item.badge }}</span>
+                            </button>
+                            <br />
+                            <label>{{ item.title }} </label>
+                        </div>
+                    </div>
+
+
+                    <div data-ng-if="item.badge == '0'">
+                        <div class="product-menu-item-spacer" data-ng-click="">
+                            <button class="btn btn-default" id="menu-item-{{item.name}}-btn">
+                                <img ng-src="{{ item.img }}" alt="{{ item.imgAlt }}" width="100%">
+                            </button>
+                            <br />
+                            <label>{{ item.title }}</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+

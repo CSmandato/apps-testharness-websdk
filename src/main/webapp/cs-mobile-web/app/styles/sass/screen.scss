@@ -1,0 +1,54 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass";
+@import "compass/reset";
+
+$fa-font-path: "../../../bower_components/font-awesome/fonts/";
+$icon-font-path: "../../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+@import "../../../bower_components/font-awesome/scss/font-awesome.scss";
+
+
+// @import "custom/_variables.scss";
+
+@import "../../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap-compass";
+@import "../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "partials/_base.scss";
+@import "partials/_default-login.scss";
+/*@import "partials/_navbar.scss";
+@import "partials/_user-input.scss";
+@import "partials/_conversation.scss";
+@import "partials/_overlay.scss";*/
+
+@import "partials/_product-menu.scss";
+/*
+@import "partials/_product-conversation.scss";
+@import "partials/_product-header.scss";
+*/
+
+@import "partials/_self-service.scss";
+
+
+
+
+/*****   Do not touch anything above this line!   ******/
+
+
+@import "partials/_calendar.scss";
+@import "partials/_datepicker.scss";
+@import "partials/_history";
+@import "partials/_message";
+@import "partials/_user-input";
+@import "partials/_header";
+@import "partials/_content";
+@import "partials/_footer";
+@import "partials/_faqs";
+@import "partials/_ssc-article";
+@import "partials/_notifications";
+@import "partials/_loading";
+
+
+

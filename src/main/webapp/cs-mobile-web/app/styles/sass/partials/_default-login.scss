@@ -1,0 +1,25 @@
+#login-form-wrapper {
+  padding: 10px 15px;
+}
+  @media only screen 
+and (min-width : 600px) {
+  #login-form-wrapper {
+    padding: 30px 15px;
+  }
+}
+#login-form {
+
+  .form-group {
+    margin-bottom: 5px;
+  }
+  @media only screen 
+and (min-width : 600px) {
+  .form-group {
+    margin-bottom: 10px;
+  }
+}
+
+}
+.default-login-textarea {
+  resize: none;
+}

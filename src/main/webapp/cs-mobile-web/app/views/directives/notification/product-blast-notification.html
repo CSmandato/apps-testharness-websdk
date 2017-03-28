@@ -1,0 +1,19 @@
+<div class="container-fluid" id="product-blast-notification-container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+            <div>
+                <div class="header">
+                    <strong data-ng-class="'pull-left primary-font'">{{notification.subject}}</strong>
+                    <small data-ng-class="'pull-right clear-right'" class=" text-muted">
+                        <span class="fa fa-clock-o"></span>
+                        {{notification.displayTstamp | date:'MM/dd/yyyy'}}
+                    </small>
+
+                </div>
+                <p data-ng-class="'pull-left clear-left'">
+                    {{notification.message}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

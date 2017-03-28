@@ -1,0 +1,40 @@
+<div class="container-fluid" style="text-align: center">
+  <form class="form-inline" data-ng-submit="send()">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+
+        <div style="height: 45px;">
+          <div class="alert alert-danger" role="alert" data-ng-show="error" style="padding: 7px;">
+            <p>{{ errorMessage }}</p>
+          </div>
+        </div>
+
+        <!-- User Date Picker -->
+
+        <div class="form-group">
+          <div class="row">
+            <p>Native Date Picker</p>
+
+            <div data-ng-class="error ? 'has-error' : ''">
+              <div class="col-xs-8">
+                <input style="min-width: 100%"
+                       data-ng-model="date"
+                       type="date"
+                       min="{{ messageData.dateMin }}"
+                       max="{{ messageData.dateMax }}"
+                       name="input-field"
+                       class="form-control"
+                       id="input-field"
+                       data-ng-required="true"
+                  />
+              </div>
+              <div class="col-xs-4">
+                <input value="Send" type="submit" class="btn btn-primary" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

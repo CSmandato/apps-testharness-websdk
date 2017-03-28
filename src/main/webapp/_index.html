@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>CS Times Demo</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<style>
+
+  /* enable absolute positioning */
+  .inner-addon {
+    position: relative;
+  }
+
+  /* style icon */
+  .inner-addon .glyphicon {
+    position: absolute;
+    padding: 6px;
+    pointer-events: none;
+  }
+
+  /* align icon */
+  .left-addon .glyphicon {
+    left: 0px;
+  }
+
+  .right-addon .glyphicon {
+    right: 0px;
+  }
+
+  /* add padding  */
+  .left-addon input {
+    padding-left: 30px;
+  }
+
+  .right-addon input {
+    padding-right: 30px;
+  }
+
+  .navbar-header {
+    width: 300px;
+  }
+
+  .navbar hr {
+    margin: 3px;
+    border-color: #aaa;
+  }
+
+  .navbar input {
+    background-color: #555;
+    color: #ccc;
+    border-color: #888;
+  }
+
+  .nav-divider {
+    border-bottom: 1px #aaa;
+  }
+
+  .navbar-above {
+    margin-top: 25px;
+  }
+
+  .navbar-search-icon {
+    color: #ccc;
+  }
+
+  .nav-below {
+
+  }
+
+  .nav-below > li > a {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .subscribe-now {
+    text-align: center;
+  }
+
+  body {
+    padding-top: 130px;
+  }
+
+  .green {
+    background-color: green;
+    min-height: 40px;
+  }
+
+  .red {
+    background-color: red;
+    height: 40px;
+  }
+
+
+  .panel {
+
+    border: 0;
+    border-radius: 0 !important;
+  }
+
+  .panel .panel-heading {
+
+    border-radius: 0 !important;
+  }
+
+
+  #current-story {
+  }
+
+  #current-story img {
+    width: 100%;
+    z-index: 99;
+  }
+
+  #current-story .lwr-third {
+    background: black;
+    opacity: .8;
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #current-story .lwr-third h3 {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 25px;
+  }
+
+  #current-story .lwr-third p {
+    color: red;
+  }
+
+
+  #story-list-container {}
+
+  #story-list-container ul{
+    padding-left: 0px;
+  }
+
+  li.story-list-item {
+    list-style-type: none;
+    display: inline;
+  }
+
+
+  #featured-categories {
+    margin-top: 10px;
+  }
+
+  .featured-category .panel {
+
+    border: 0;
+    box-shadow: 0 0 0;
+  }
+
+  .featured-category p {
+
+    margin-top: 5px;
+  }
+
+  .featured-category img {
+    width: 100%;
+
+  }
+
+  .panel-news-category {
+
+    border: 0;
+    box-shadow: 0 0 0;
+
+  }
+
+
+  #info-boxes {}
+
+  #info-boxes :first-child.info-box {
+    padding-left: 0;
+    padding-right: 7px;
+  }
+
+  #info-boxes :last-child.info-box {
+    padding-left: 7px;
+    padding-right: 0;
+  }
+
+  #info-boxes .panel .panel-body {
+
+    background: #555;
+    color: #F7F7F7;
+  }
+
+
+  .market-panel {}
+
+  .market-panel .market-name {
+    display: block;
+  }
+
+  .market-panel .market-points {
+
+    display: block;
+    font-size: 32px;
+  }
+
+  .market-panel .market-avg {
+    display: block;
+    font-size: 16px;
+    padding-bottom: 20px;
+  }
+
+  .market-panel .market-summary {
+    margin-top: 15px;
+    display: block;
+    font-size: 12px;
+  }
+
+
+  .weather-panel {}
+
+  .weather-panel .weather-hi-lo {
+
+    display: block;
+
+  }
+
+  .weather-panel .weather-temp {
+    display: block;
+    font-size: 32px;
+  }
+
+  .weather-panel .weather-icon {
+    font-size: 4em;
+  }
+
+  .weather-panel .weather-location {
+    display: block;
+    padding-bottom: 27px;
+
+  }
+
+  .weather-panel .weather-details {
+    display: block;
+
+  }
+
+
+  #footer {
+    background: #555;
+    color: #A4A4A4;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  #footer-links ul.footer-list {
+
+    padding-left: 0;
+
+  }
+
+  #footer-links ul.footer-list li {
+
+    list-style-type: none;
+    margin-bottom: 10px;
+  }
+
+  #footer-links .footer-section {
+    border-left: 1px solid  #A4A4A4;
+  }
+
+  #footer-links :first-child {
+    border-left: none;
+  }
+
+
+  #footer ul.footer-list-horizontal {
+    padding-left : 0;
+  }
+
+  #footer ul.footer-list-horizontal li {
+    display: inline-block;
+    list-style-type: none;
+    margin-left: 20px;
+  }
+
+
+
+  @media screen and (min-width: 992px) and (max-width: 1200px) {
+    .market-panel .market-avg {
+      display: block;
+      font-size: 12px;
+      padding-bottom: 5px;
+    }
+
+    .market-panel .market-summary {
+      margin-top: 8px;
+      display: block;
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+
+
+    .weather-panel .weather-icon {
+      font-size: 4em;
+    }
+
+    #footer-links .footer-section {
+      border-top: 1px solid  #A4A4A4;
+      border-left: none;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    #footer-links .footer-section:first-child {
+      border-top: none;
+      border-left: none;
+    }
+
+    .nav-below > li > a {
+      font-size: 12px;
+      padding-left: 5px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .navbar-header {
+      width: 100%;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .navbar-brand{
+      width:  170px;
+    }
+
+    .navbar-collapse {
+      max-height: 475px;
+    }
+
+    body {
+      padding-top: 60px;
+    }
+  }
+
+
+
+</style>
+
+<!-- Contact Solutions Custom Styles -->
+<style>
+  #cs-iframe-container {
+
+    display: none;
+    width: 320px;
+    height: 500px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    overflow: hidden;
+  }
+
+  #mt-frame {
+    height: 500px;
+    width: 320px;
+  }
+
+  #mytimeResumeConversation {
+
+    background: white;
+    border-radius: 5px;
+    position: fixed;
+
+    z-index: 500;
+    padding: 15px;
+    text-align: center;
+  }
+</style>
+
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="images/csi_times_logo_wht.png" width="100%"/>
+      </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <div class="hidden-xs">
+        <div class="subscribe-now navbar-right navbar-above" style="margin-top: 20px; margin-left: 20px;">
+          <span style="color: blue; ">SUBSCRIBE NOW</span>
+          <br/>
+          <span style="color: #ddd; font-size">3 Months for the Price of 1</span>
+        </div>
+
+        <form class="navbar-form navbar-right navbar-above" role="search">
+          <div class="form-group">
+            <div class="inner-addon right-addon">
+              <i class="glyphicon glyphicon-search navbar-search-icon"></i>
+              <input type="text" class="form-control input-sm" placeholder="Search CS Times"/>
+            </div>
+          </div>
+        </form>
+        <div style="clear: both"></div>
+        <hr style="margin-left: -15px; margin-right: -15px;"/>
+      </div>
+
+      <ul class="nav navbar-nav nav-below">
+        <li><a href="#">LOCAL</a></li>
+        <li><a href="#">WORLD</a></li>
+        <li><a href="#">SPORTS</a></li>
+        <li><a href="#">BUSINESS</a></li>
+        <li><a href="#">POLITICS</a></li>
+        <li><a href="#">ENTERTAINMENT</a></li>
+        <li><a href="#">MORE</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+             aria-expanded="false">HELP <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a onclick="SupportModule.openMainHelp()">Main Help</a></li>
+            <li><a onclick="SupportModule.openHistory()">Show Activity Log</a></li>
+            <li><a onclick="SupportModule.openNotifications()">Show Notifications</a></li>
+            <!--<li><a onclick="SupportModule.openSelfService()">Self-Service</a></li>-->
+            <li id="previous-conversation" style="display: none;"><a
+              onclick="SupportModule.resumePreviousConversation()">Resume Previous</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav nav-below navbar-right">
+        <li><a href="#"><i class="glyphicon glyphicon-user"></i> Sign In</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row" id="news-window"></div>
+      <div class="row" id="featured-categories"></div>
+
+    </div>
+    <div class="col-md-4">
+      <div class="row" id="top-stories"></div>
+      <div class="row" id="info-boxes"></div>
+    </div>
+  </div>
+  <div class="row" id="news-categories">
+    <hr />
+  </div>
+</div>
+<div id="footer">
+  <div class="container">
+
+    <div class="row" id="footer-links">
+      <div class="col-md-6 footer-section">
+        <h4>More ways to get us</h4>
+        <div class="row">
+          <div class="col-xs-4">
+            <ul class="footer-list">
+              <li>Home Delivery</li>
+              <li>Digital Subscription</li>
+              <li>Mobile & Apps</li>
+              <li>Newsletter & Alerts</li>
+              <li>Gift Subscriptions</li>
+            </ul>
+          </div>
+          <div class="col-xs-4">
+            <ul class="footer-list">
+              <li>CS Post LiveDigital Subscription</li>
+              <li>Reprints & Permissions</li>
+              <li>Post Store</li>
+              <li>Photo Store</li>
+              <li>e-Replica</li>
+
+            </ul>
+          </div>
+          <div class="col-xs-4">
+            <ul class="footer-list">
+              <li>Active</li>
+              <li><i class="fa fa-facebook-official" style="color:white"></i> facebook</li>
+              <li><i class="fa fa-rss-square" style="color:white"></i> RSS</li>
+              <li><i class="fa fa-twitter" style="color:white"></i> Twitter</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 footer-section">
+        <h4>Contact Us</h4>
+        <ul class="footer-list">
+          <li>Help & Contact Info</li>
+          <li>Reader Representative</li>
+          <li>Digital Advertising</li>
+          <li>Newspaper Advertising</li>
+          <li>News Service & Syndicate</li>
+        </ul>
+      </div>
+      <div class="col-md-3 footer-section">
+        <h4>About Us</h4>
+        <ul class="footer-list">
+          <li>About CS Times</li>
+          <li>In the community</li>
+          <li>Careers</li>
+          <li>Newspaper in Education</li>
+          <li>Digital Publishing Guidelines</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row" id="copyright">
+      <div class="col-xs-12">
+        <hr />
+        <span>&copy;1996 - 2015 CS Times.  All Rights Reserved</span>
+        <ul class="footer-list-horizontal pull-right">
+          <li>Privacy Policy</li>
+          <li>Submission & Discussion Policy</li>
+          <li>RSS Terms of Service</li>
+          <li>Ad Choices</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script type="x-template" id="news-window-tpl">
+  <div id="selected-story" class="row">
+
+  </div>
+</script>
+<script type="x-template" id="current-story-tpl">
+    <div class="col-xs-12" id="current-story">
+      <img src="<%=img.src%>" alt="<%=img.alt%>" />
+      <div class="lwr-third">
+        <h3><%=heading%></h3>
+        <!--<p><%=description%></p>-->
+      </div>
+    </div>
+</script>
+
+<script type="x-template" id="story-list-img-tpl">
+  <div id="story-list-container" class="row">
+    <div class="col-xs-12">
+      <ul class="story-list"></ul>
+    </div>
+  </div>
+</script>
+<script type="x-template" id="story-list-item-img-tpl">
+  <li class="story-list-item" data-index="<%=index%>">
+    <img src="<%=img.src%>" alt="<%=img.alt%>" />
+    <p><%=heading%></p>
+  </li>
+</script>
+
+<script type="x-template" id="story-list-tpl">
+  <div id="story-list-container" class="hidden-sm hidden-xs">
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">Top Stories</div>
+        <!-- List group -->
+        <div class="list-group story-list"></div>
+      </div>
+
+  </div>
+</script>
+<script type="x-template" id="story-list-item-tpl">
+  <a href="#" class="list-group-item" data-index="<%=index%>">
+    <%=heading%>
+  </a>
+</script>
+
+<script type="x-template" id="news-category-tpl">
+  <div class="col-md-4">
+    <div class="panel panel-default panel-news-category">
+      <div class="panel-heading"><%=name%> <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span></div>
+      <!-- List group -->
+      <ul class="list-group"></ul>
+    </div>
+  </div>
+</script>
+<script type="x-template" id="news-category-item-tpl">
+<li class="list-group-item">
+  <p><%=heading%></p>
+</li>
+</script>
+
+<script type="x-template" id="featured-category-tpl">
+    <div class="col-xs-4 featured-category">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><%=title%> <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span></div>
+        <!-- List group -->
+        <img src="<%=img.src%>" alt="<%=img.alt%>" />
+        <p><%=story.heading%></p>
+      </div>
+    </div>
+</script>
+<script type="x-template" id="featured-category-item-tpl">
+  <div class="col-md-4 featured-category">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><%=title%> <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span></div>
+      <!-- List group -->
+      <img src="<%=img.src%>" alt="<%=img.alt%>" />
+      <p><%=story.heading%></p>
+    </div>
+  </div>
+</script>
+
+<script type="x-template" id="market-tpl">
+  <div class="col-xs-6 info-box">
+    <div class="">
+      <div class="panel panel-default market-panel">
+        <div class="panel-heading"><%=title%> <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span></div>
+        <!-- List group -->
+        <div class="panel-body">
+          <span class="market-name"><%=name%></span>
+          <span class="market-points"><%=points%></span>
+          <span class="market-avg"><%=avg%></span>
+          <span class="market-summary">Nasdaq: 5,130.12 <i style="color: green" class="glyphicon glyphicon-arrow-up"></i>33.13</span>
+          <span class="market-summary">S&P: 2,123.04 <i style="color: green" class="glyphicon glyphicon-arrow-up"></i>436.34</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+<script type="x-template" id="weather-tpl">
+  <div class="col-xs-6 info-box weather-panel">
+    <div class="">
+      <div class="panel panel-default">
+        <div class="panel-heading"><%=title%> <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span></div>
+        <!-- List group -->
+        <div class="panel-body">
+
+          <div class="row">
+            <div class="col-xs-6">
+              <span class="weather-hi-lo"><%=hi%>/<%=lo%></span>
+              <span class="weather-temp"><%=currentTemp%>&deg;</span>
+            </div>
+            <div class="col-xs-6">
+              <i class="glyphicon glyphicon-cloud weather-icon"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <span class="weather-location"><%=city%>, <%=state%></span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <span class="weather-details">Humidity: <%=humidity%></span>
+              <span class="weather-details">Precipitation: <%=precipitation%></span>
+              <span class="weather-details">Wind: <%=wind%></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+
+
+<script type="x-template" id="footer-list-generic">
+  <div class="col-xs-4">
+    <ul class="footer-list"></ul>
+  </div>
+</script>
+<script type="x-template" id="footer-list-header">
+  <div class="col-xs-4">
+    <h4></h4>
+    <ul class="footer-list"></ul>
+  </div>
+</script>
+<script type="x-template" id="footer-list-item-link">
+<li><a href="<%=url%>"><%=name%></a></li>
+</script>
+
+<script type="x-template" id="footer-list-item">
+  <li><%=text%></li>
+</script>
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<!-- News Module -->
+<script type="text/javascript">
+
+  var TemplateEngine = (function () {
+
+    var cache = {};
+
+    function make(str, data) {
+
+      // Figure out if we're getting a template, or if we need to
+      // load the template - and be sure to cache the result.
+      var fn = !/\W/.test(str) ?
+        cache[str] = cache[str] ||
+          make(document.getElementById(str).innerHTML) :
+
+        // Generate a reusable function that will serve as a template
+        // generator (and which will be cached).
+        new Function("obj",
+          "var p=[],print=function(){p.push.apply(p,arguments);};" +
+
+            // Introduce the data as local variables using with(){}
+          "with(obj){p.push('" +
+
+            // Convert the template into pure JavaScript
+          str
+            .replace(/[\r\t\n]/g, " ")
+            .split("<%").join("\t")
+            .replace(/((^|%>)[^\t]*)'/g, "$1\r")
+            .replace(/\t=(.*?)%>/g, "',$1,'")
+            .split("\t").join("');")
+            .split("%>").join("p.push('")
+            .split("\r").join("\\'")
+          + "');}return p.join('');");
+
+      // Provide some basic currying to the user
+      return data ? fn(data) : fn;
+    }
+
+    return {
+      make: make
+    }
+
+  })();
+  var NewsModule = (function (tpl) {
+
+    var newsWindowTpl, currentStoryTpl, storyListTpl, storyListItemTpl, newsData, currentStory, newsCategoryTpl, newsCategoryItemTpl,
+      featuredCategoryTpl, featuredCategoryItemTpl, marketTpl, weatherTpl;
+
+    function getTemplates() {
+      newsWindowTpl = $('#news-window-tpl').html();
+      currentStoryTpl = $('#current-story-tpl').html();
+      storyListTpl = $('#story-list-tpl').html();
+      storyListItemTpl = $('#story-list-item-tpl').html();
+      newsCategoryTpl = $('#news-category-tpl').html();
+      newsCategoryItemTpl = $('#news-category-item-tpl').html();
+      featuredCategoryTpl = $('#featured-category-tpl').html();
+      featuredCategoryItemTpl = $('#featured-category-item-tpl').html();
+      marketTpl = $('#market-tpl').html();
+      weatherTpl = $('#weather-tpl').html();
+    }
+
+    function addCurrentStory(elem) {
+
+      $('#' + elem).append(createCurrentStory(currentStoryTpl, currentStory));
+    }
+
+    function createCurrentStory() {
+
+      return tpl.make(currentStoryTpl, currentStory);
+    }
+
+    function updateCurrentStory() {
+
+      $('#current-story').replaceWith(tpl.make(currentStoryTpl, currentStory))
+    }
+
+    function addStorySlider(elem) {
+
+      $('#' + elem).append(createStorySlider(storyListTpl));
+
+    }
+
+    function createStoryItem(template, data) {
+
+      return tpl.make(template, data);
+    }
+
+    function createStorySlider(template) {
+
+      var storyItems = '';
+
+      $.each(newsData.topStories, function (i, v) {
+        v.index = i;
+        storyItems += createStoryItem(storyListItemTpl, v);
+      });
+
+      var tmp = $(template).clone();
+      var list = tmp.find('.story-list').append(storyItems);
+      tmp.find('.story-list').replaceWith(list);
+      return tmp;
+    }
+
+    function addCategories(elem) {
+      $.each(newsData.categories, function (i, v) {
+        $('#' + elem).append(createCategory(newsCategoryTpl, v));
+      });
+    }
+
+    function createCategory(tmp, data) {
+
+      tmp = tpl.make(tmp, data);
+      stories = '';
+
+      $.each(data.stories, function (i, v) {
+
+        stories += createCategoryItem(newsCategoryItemTpl, v);
+      });
+
+      var _tmp = $(tmp).clone();
+      _tmp.find('.list-group').append(stories);
+
+      return _tmp;
+    }
+
+    function createCategoryItem(tmp, data) {
+
+      return tpl.make(tmp, data);
+    }
+
+    function addFeaturedCategories(elem) {
+      $.each(newsData.featuredCategories, function (i, v) {
+
+        $('#' + elem).append(createFeaturedCategory(featuredCategoryTpl, v));
+      });
+    }
+
+    function createFeaturedCategory(tmp, data) {
+
+      return tpl.make(tmp, data);
+    }
+
+    function createFeaturedCategoryItem(tmp, data) {
+
+      return tpl.make(tmp, data);
+    }
+
+    function addMarket(elem) {
+
+      $('#' + elem).append(createMarket(marketTpl, newsData.market));
+    }
+
+    function createMarket(tmp, data) {
+
+      return tpl.make(tmp, data);
+    }
+
+    function addWeather(elem) {
+
+      $('#' + elem).append(createWeather(weatherTpl, newsData.weather));
+    }
+
+    function createWeather(tmp, data) {
+
+      return tpl.make(tmp, data);
+    }
+
+    function registerEventHandlers() {
+
+      $(document).on('news-module-change', function() {
+        render();
+      });
+
+      $('.story-list').delegate('a', 'click', function(event) {
+        event.preventDefault();
+        var elem = $(this);
+
+        currentStory = newsData.topStories[elem.data('index')];
+        $(document).trigger('news-module-change');
+      })
+    }
+
+    function render() {
+      updateCurrentStory();
+    }
+
+    return {
+      init: function (data) {
+        newsData = data;
+        currentStory = newsData.topStories[0];
+        getTemplates();
+      },
+      registerEventHandlers:  registerEventHandlers,
+      addCurrentStory: addCurrentStory,
+      addStorySlider: addStorySlider,
+      addCategories: addCategories,
+      addFeaturedCategories: addFeaturedCategories,
+      addMarket: addMarket,
+      addWeather: addWeather
+    }
+  })(TemplateEngine);
+
+  var newsData = {
+    topStories: [
+      {
+        heading: 'Supreme Court backs use of lethal injection drug',
+        description: 'Test story description.',
+        img: {
+          src: 'plugins/news-module/imgs/sc.jpg',
+          alt: 'an image'
+        },
+        link: ''
+      },
+      {
+        heading: 'Escaped killer David Sweat shot, captured alive',
+        description: 'Test story description.',
+        img: {
+          src: 'plugins/news-module/imgs/sweat.jpg',
+          alt: 'an image'
+        },
+        link: ''
+      },
+      {
+        heading: 'Ex White House chief\'s body found',
+        description: 'Test story description.',
+        img: {
+          src: 'plugins/news-module/imgs/wh-chef.jpg',
+          alt: 'an image'
+        },
+        link: ''
+      },
+      {
+        heading: 'Earthquake hits city of Volcano in Hawaii',
+        description: 'Test story description.',
+        img: {
+          src: 'plugins/news-module/imgs/hawaii.jpg',
+          alt: 'an image'
+        },
+        link: ''
+      },
+      {
+        heading: 'Taliban storm Afghan Parliament',
+        description: 'Test story description.',
+        img: {
+          src: 'plugins/news-module/imgs/taliban.jpg',
+          alt: 'an image'
+        },
+        link: ''
+      },
+      {
+        heading: 'Key U.S. General accused of steering contract',
+        description: 'Test story description.',
+        img: {
+          src: 'plugins/news-module/imgs/general.jpg',
+          alt: 'an image'
+        },
+        link: ''
+      },
+      {
+        heading: 'Puerto Rico has not easy path out of debt crisis',
+        description: 'Test story description.',
+        img: {
+          src: 'plugins/news-module/imgs/puerto-rico.jpg',
+          alt: 'an image'
+        },
+        link: ''
+      },
+      {
+        heading: 'Toxic moonshine kills 99 in slum',
+        description: 'Test story description.',
+        img: {
+          src: 'plugins/news-module/imgs/moonshine.jpg',
+          alt: 'an image'
+        },
+        link: ''
+      },
+      {
+        heading: 'Worshippers return Charleston\'s Emanuel AME',
+        description: 'Test story description.',
+        img: {
+          src: 'plugins/news-module/imgs/worshippers.jpg',
+          alt: 'an image'
+        },
+        link: ''
+      }
+    ],
+    market: {
+      title: 'Market Watch',
+      name: 'Dow',
+      points: '+90.95',
+      avg: '18, 106.90/ +0.50%'
+    },
+    weather: {
+      title: 'Weather',
+      hi: '80',
+      lo: '65',
+      currentTemp: '78',
+      city: 'Reston',
+      state: 'VA',
+      humidity: '18%',
+      precipitation: '0.00',
+      wind: '3'
+    },
+    featuredCategories: [
+
+      {
+        title: "Local",
+        img: {
+          src:'plugins/news-module/imgs/ec.jpg',
+          alt: 'Some image'
+        },
+        story: {
+          heading: 'Tourism on the Emerald Coast is expected to increase this year'
+        }
+      },
+      {
+        title: "World",
+        img: {
+          src:'plugins/news-module/imgs/nail-house.jpg',
+          alt: 'Some image'
+        },
+        story: {
+          heading: '\'Nail Houses\': The homeowners who refused to budge'
+        }
+      },
+      {
+        title: "Sports",
+        img: {
+          src:'plugins/news-module/imgs/soccer.jpg',
+          alt: 'Some image'
+        },
+        story: {
+          heading: 'Meet the 2015 U.S. women\'s soccer team'
+        }
+      }
+    ],
+    categories: [
+
+      {
+        name: 'Tech',
+        stories:  [
+          {
+            heading: 'This farm in a box generates $15,000 a month',
+          },
+          {
+            heading: 'SpaceX\'s failed mission: What we know',
+          },
+          {
+            heading: 'Commute to work on a one-wheeled scooter',
+          },
+          {
+            heading: 'Parents, yes! Your princess can code',
+          },
+          {
+            heading: 'The company is now worth more than $25 billion',
+          },
+        ],
+      },
+      {
+        name: 'Markets',
+        stories:  [
+          {
+            heading: 'Why U.S. won\'t suffer big hits after Greek default',
+          },
+          {
+            heading: 'Puerto Rico: Creditors close deal to avoid default',
+          },
+          {
+            heading: 'A new measure of active vs passive investing',
+          },
+          {
+            heading: 'Dollar falls in Q2 as U.S. data raise doubts ',
+          },
+          {
+            heading: 'Remember all that oil in storage?  Here it comes',
+          },
+        ],
+      },
+      {
+        name: 'Opinion',
+        stories:  [
+          {
+            heading: 'Our View: Who decides if killers die?',
+          },
+          {
+            heading: 'Robb: a bad pot argument',
+          },
+          {
+            heading: 'Montini: Group wins minimum wage fight',
+          },
+          {
+            heading: 'Allhands: Sign walkers aren\'t worth the fight',
+          },
+          {
+            heading: 'Letter: Whose \'will of the people\' is it?',
+          },
+        ],
+      },
+      {
+        name: 'Health',
+        stories:  [
+          {
+            heading: 'One dead after Ebola reappears in Liberia',
+          },
+          {
+            heading: 'Mom loses cancer fight, dad continues alone',
+          },
+          {
+            heading: 'PTSD might increase heart attacks in women',
+          },
+          {
+            heading: 'Will same sex marriage make America healthier?',
+          },
+          {
+            heading: 'CDC warns of swimming pool parasite',
+          },
+        ],
+      },
+      {
+        name: 'Travel',
+        stories:  [
+          {
+            heading: 'Remote controlled passenger flights coming soon?',
+          },
+          {
+            heading: 'Airline fees we love to hate',
+          },
+          {
+            heading: 'The secret behind street art',
+          },
+          {
+            heading: 'Americas 11 most endangered historic places',
+          },
+          {
+            heading: 'Grizzly decides to see tourists in Montana',
+          },
+        ],
+      },
+      {
+        name: 'Living',
+        stories:  [
+          {
+            heading: 'Dead, again: Why celebrities die online',
+          },
+          {
+            heading: '\'Double star\' moment for Jupiter and Venus',
+          },
+          {
+            heading: 'Misty Copeland rises to principle dancer',
+          },
+          {
+            heading: 'Cheeky medieval doodles reveal silly ancestors',
+          },
+          {
+            heading: 'Transgendermodel finds body confidence',
+          },
+        ],
+      },
+    ],
+  };
+  NewsModule.init(newsData);
+  NewsModule.addCurrentStory('news-window');
+  NewsModule.addStorySlider('top-stories');
+  NewsModule.addFeaturedCategories('featured-categories');
+  NewsModule.addMarket('info-boxes');
+  NewsModule.addWeather('info-boxes');
+  NewsModule.addCategories('news-categories');
+  NewsModule.registerEventHandlers();
+</script>
+
+
+<!-- Contact Solutions Support Module -->
+<script src="js/mytime/MyTimeSupportModule.js"></script>
+<script type="text/javascript">
+
+  var userOptions = {
+    addrEmail: 'mmandato@contactsolutions.com',
+    phone: '1234567890'
+  };
+
+  // uncomment to turn off auto login
+  // For testing/demo
+  userOptions = false;
+
+  // Create and new support module
+  var SupportModule = new MyTimeSupportModule();
+
+  // Uncomment the line below this one to see the sdk run from the locally hosted dir
+  SupportModule.setMyTimeDomain("http://localhost:8080");
+  SupportModule.setMyTimePath("/cs-mobile-web/app/index.html");
+
+  // Uncomment the line below this one to see the sdk run from a foreign domain.
+  // SupportModule.setMyTimeDomain("FOREIGN_DOMAIN");
+
+  // You will also have to configure the sdk parent domain.
+  // Set the value PARENT_DOMAIN in the sdk file app/scripts/modules/system-config.js
+  // All sdk configuration can be found in app/scripts/modules/system-config.js
+
+  // Init
+  $(document).ready(function () {
+
+    // What are we viewing this on?
+    SupportModule.init();
+
+    if (userOptions) {
+
+      SupportModule.setAutoLoginUser(userOptions);
+    }
+  });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+<li data-ng-click="onItemClick()">
+    <div class="notification-list-item" data-ng-class="notification.notificationState === 'Unread' ? 'unread' : 'read'">
+        <div class="notification-heading">{{notification.subject}}<small class="pull-right notification-date">{{formatDate()}}</small></div>
+        <p data-truncate data-lines="2" data-ng-model="notification.message"> {{ notification.message }} </p>
+    </div>
+</li>

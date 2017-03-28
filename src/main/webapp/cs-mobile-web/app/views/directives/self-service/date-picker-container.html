@@ -1,0 +1,74 @@
+<div id="datepicker" class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <h4>Pick Date Test</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-default btn-block up" data-ng-click="incrementMonth()" id="increment-month"><i class="fa fa-caret-up" aria-hidden="true" title="Next"></i></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <input type="text" class="form-control date-picker-text" data-ng-model="date.month" data-ng-disabled="true" id="month-input"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-default btn-block down" data-ng-click="decrementMonth()" id="decrement-month"><i class="fa fa-caret-down" aria-hidden="true" title="Prev"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-default btn-block up" data-ng-click="incrementDays()" id="increment-day" ><i class="fa fa-caret-up" aria-hidden="true" title="Next"></i></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <input type="text" class="form-control date-picker-text" data-ng-model="date.day" data-ng-disabled="true" id="day-input" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-default btn-block down" data-ng-click="decrementDays()" id="decrement-day"><i class="fa fa-caret-down" aria-hidden="true" title="Prev"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4 last">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-default btn-block up" data-ng-click="incrementYears()" id="increment-year"><i class="fa fa-caret-up" aria-hidden="true" title="Next"></i></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <input type="text" class="form-control date-picker-text" data-ng-model="date.year" data-ng-disabled="true" id="year-input" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-default btn-block down" data-ng-click="decrementYears()" id="decrement-year"><i class="fa fa-caret-down" aria-hidden="true" title="Prev"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <p>
+                <button class="btn btn-primary btn-block" data-ng-click="sendDatePicker()" id="submit-date-picker-btn">Send</button>
+            </p>
+        </div>
+    </div>
+
+</div>

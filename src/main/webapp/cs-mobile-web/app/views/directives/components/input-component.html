@@ -1,0 +1,31 @@
+<div id="input-wrapper">
+    <div id="agent-typing-container" data-ng-show="inputctrl.agentTyping == true">
+        <span id="agent-typing-text">Agent is typing ...</span>
+    </div>
+    <div id="input-container">
+        <div id="input-left">
+            <a data-ng-file-select data-ng-model="inputctrl.files" data-ng-multiple="multiple">
+                <i class="fa fa-fw fa-file-image-o" title="Photo"></i>
+            </a>
+        </div>
+        <div id="input-center">
+            <textarea id="user-input" type="text" placeholder="Enter message" data-ng-model="inputctrl.inputMessage"></textarea>
+        </div>
+        <div id="input-right">
+            <div id="send-btn-wrapper" data-ng-click="inputctrl.sendMessage()" data-ng-if="inputctrl.inputMessage.length">
+                <div class="send-btn-container">
+                    <div id="send-btn" data-ng-if="!inputctrl.sendInProgress">Send</div>
+                    <i class="fa fa-fw fa-pulse fa-spinner" data-ng-if="inputctrl.sendInProgress"></i>
+                </div>
+            </div>
+            <div id="microphone" data-ng-if="!inputctrl.inputMessage.length">
+                <a data-ng-click="inputctrl.recordAudio()" data-ng-if="inputctrl.hasGetUserMedia() && !inputctrl.recording">
+                    <i class="fa fa-fw fa-microphone" aria-hidden="true" title="Voice Note"></i>
+                </a>
+                <a data-ng-click="inputctrl.stopRecording()" data-ng-if="inputctrl.hasGetUserMedia() && inputctrl.recording" style="color: red">
+                    <i class="fa fa-fw fa-microphone-slash" aria-hidden="true" title="No Voice Note"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

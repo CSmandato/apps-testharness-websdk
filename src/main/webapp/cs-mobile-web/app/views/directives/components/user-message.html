@@ -1,0 +1,32 @@
+<div>
+    <div class="message-info-container user">
+        <div class="message-timestamp">
+            {{ formatDate() }}
+        </div>
+        <div class="message-info">
+            <p data-ng-if="message.mimeType === 'text/plain' || message.mimeType.indexOf('application/vnd.cs.mobile') !== -1">
+                {{message.messageText}}
+            </p>
+
+            <p data-ng-if="message.mimeType === 'image/png' || message.mimeType === 'image/jpg' || message.mimeType === 'image/jpeg'">
+                <a ng-href="{{ message.messageData.url }}" target="_blank"><img ng-src="{{ message.messageData.thumbNail }}" /></a>
+            </p>
+
+            <p data-ng-if="(message.mimeType === 'audio/mp4' || message.mimeType === 'audio/wav') && (device !== 'iOS')">
+                <audio controls style="display:block; width: 210px;">
+                    <source data-ng-if="message.mimeType === 'audio/mp4'" ng-src="{{ message.messageData.url }}" type="audio/mp4">
+                    <source data-ng-if="message.mimeType === 'audio/wav'" ng-src="{{ message.messageData.url }}">
+                    <source data-ng-if="message.mimeType === 'audio/x-wav'" ng-src="{{ message.messageData.url }}" type="audio/x-wav">
+                    Your browser does not support the audio tag.
+                </audio>
+            </p>
+
+            <p data-ng-if="(message.mimeType === 'audio/mp4' || message.mimeType === 'audio/wav') && (device === 'iOS')">
+                <a ng-href="{{ message.messageData.url }}" target="_blank">Play Audio</a>
+            </p>
+        </div>
+    </div>
+    <div class="message-icon-container">
+        <img data-ng-src="images/ic-customer.png" width="100%" />
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="container-fluid" style="text-align: center">
+  <form class="form-inline" data-ng-submit="send()">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+
+        <div style="height: 45px;">
+          <div class="alert alert-danger" role="alert" data-ng-show="error" style="padding: 7px;">
+            <p>{{ errorMessage }}</p>
+          </div>
+        </div>
+
+        <!-- User Phone Number -->
+        <div class="form-group">
+          <div class="row">
+            <div style="padding-left: 10px; padding-right: 10px;" data-ng-class="error ? 'has-error' : ''">
+
+              <div class="col-lg-6">
+                <div class="input-group">
+                  <input style="background: #fff;"
+                         data-ng-model="phoneNumber"
+                         type="tel"
+                         name="number-field"
+                         class="form-control"
+                         id="input-field"
+                         placeholder="Phone# e.g.555-555-5555"
+                         data-ng-required="true"
+                         data-ng-keydown="enter($event)"
+                         autofocus
+                    />
+                  <span class="input-group-btn">
+                    <input value="Send" type="submit" class="btn btn-primary" />
+                  </span>
+                </div><!-- /input-group -->
+              </div><!-- /.col-lg-6 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

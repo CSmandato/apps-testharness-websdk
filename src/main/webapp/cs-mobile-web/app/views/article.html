@@ -1,0 +1,10 @@
+<header data-title="headerText" data-btn-enable="btnEnable"></header>
+<content data-full-height="loading">
+  <div class="article-content-container">
+    <div ng-bind-html="articleHtml"></div>
+  </div>
+  <loading data-visible="loading"></loading>
+</content>
+<footer data-ng-if="!loading">
+  <ssc-article-feedback-bar></ssc-article-feedback-bar>
+</footer>

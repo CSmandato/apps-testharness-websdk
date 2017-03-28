@@ -1,0 +1,187 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+      <meta http-equiv="cache-control" content="no-cache" />
+      <meta http-equiv="expires" content="0" />
+      <meta http-equiv="pragma" content="no-cache" />
+      <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link href="styles/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+      <link href="styles/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+      <!--[if IE]>
+      <link href="styles/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+      <![endif]-->
+    <!-- endbuild -->
+
+      <link rel="stylesheet" href="../bower_components/fullcalendar/fullcalendar.css"/>
+
+  </head>
+  <body ng-app="csMobileWeb2App">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Main Application -->
+
+    <!-- Render Context -->
+    <div id="main-app-container">
+      <div ng-view></div>
+    </div>
+    <!--<div id="footer-image"></div>-->
+
+
+
+    <!-- end Main Application -->
+
+
+    <div id="login-footer-image-container">
+      <!--<img id="login-footer-image" src="images/cs-times/bg_landing_intact.png" alt=""  />-->
+    </div>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="../bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+    <script type="text/javascript" src="../bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-calendar/src/calendar.js"></script>
+    <script type="text/javascript" src="../bower_components/fullcalendar/fullcalendar.js"></script>
+    <script type="text/javascript" src="../bower_components/fullcalendar/gcal.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-date/src/date.js"></script>
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="../vendor/strophe.js"></script>
+    <script src="../vendor/ng-file-select.js"></script>
+    <script src="scripts/modules/system-config.js?ver=${script.version}"></script>
+    <script src="scripts/modules/device-config.js?ver=${script.version}"></script>
+    <script src="scripts/modules/user-attrs.js?ver=${script.version}"></script>
+    <script src="scripts/modules/post-message.js?ver=${script.version}"></script>
+    <script src="scripts/modules/source-policy.js?ver=${script.version}"></script>
+    <script src="scripts/modules/custom-messages.js?ver=${script.version}"></script>
+    <script src="scripts/services/services.js?ver=${script.version}"></script>
+    <script src="scripts/directives/directives.js?ver=${script.version}"></script>
+    <script src="scripts/app.js?ver=${script.version}"></script>
+    <script src="scripts/controllers/main.js?ver=${script.version}"></script>
+
+        <!-- endbuild -->
+
+    <script src="scripts/vendor/recorderWorker.js"></script>
+    <script type="text/javascript">
+      //JS FILES RECORDER.JS
+      (function(window){
+
+
+
+          var WORKER_PATH = 'scripts/vendor/recorderWorker.js';
+          var Recorder = function(source, cfg){
+              var config = cfg || {};
+              var bufferLen = config.bufferLen || 4096;
+              this.context = source.context;
+
+              if (!this.context.createJavaScriptNode) {
+                  this.node = this.context.createScriptProcessor(bufferLen, 2, 2);
+              }
+              else {
+                  this.node = this.context.createJavaScriptNode(bufferLen, 2, 2);
+              }
+
+              var worker = new Worker(config.workerPath || WORKER_PATH);
+              worker.postMessage({
+                  command: 'init',
+                  config: {
+                      sampleRate: this.context.sampleRate
+                  }
+              });
+
+              var recording = false,
+                      currCallback;
+
+              this.node.onaudioprocess = function(e){
+                  if (!recording) return;
+                  worker.postMessage({
+                      command: 'record',
+                      buffer: [
+                          e.inputBuffer.getChannelData(0),
+                          e.inputBuffer.getChannelData(1)
+                      ]
+                  });
+              }
+
+              this.configure = function(cfg){
+                  for (var prop in cfg){
+                      if (cfg.hasOwnProperty(prop)){
+                          config[prop] = cfg[prop];
+                      }
+                  }
+              }
+
+              this.record = function(){
+
+                  recording = true;
+              }
+
+              this.stop = function(){
+
+                  recording = false;
+              }
+
+              this.clear = function(){
+                  worker.postMessage({ command: 'clear' });
+              }
+
+              this.getBuffer = function(cb) {
+                  currCallback = cb || config.callback;
+                  worker.postMessage({ command: 'getBuffer' })
+              }
+
+              this.exportWAV = function(cb, type){
+                  currCallback = cb || config.callback;
+                  type = type || config.type || 'audio/wav';
+                  if (!currCallback) throw new Error('Callback not set');
+                  worker.postMessage({
+                      command: 'exportWAV',
+                      type: type
+                  });
+              }
+
+              worker.onmessage = function(e){
+                  var blob = e.data;
+                  currCallback(blob);
+              }
+
+              source.connect(this.node);
+              this.node.connect(this.context.destination);    //this should not be necessary
+          };
+
+          Recorder.forceDownload = function(blob, filename){
+              var url = (window.URL || window.webkitURL).createObjectURL(blob);
+              var link = window.document.createElement('a');
+              link.href = url;
+              link.download = filename || 'output.wav';
+              var click = document.createEvent("Event");
+              click.initEvent("click", true, true);
+              link.dispatchEvent(click);
+          }
+
+          window.Recorder = Recorder;
+
+      })(window);
+
+    </script>
+</body>
+</html>

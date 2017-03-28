@@ -1,0 +1,24 @@
+<div id="small-faq-articles-list-wrapper">
+    <div id="small-faq-articles-container">
+        <div id="search-field-wrapper">
+            <div id="search-field-container">
+                <div id="search-box">
+                    <input id="faq-search" type="text" class="form-control" data-ng-model="search.text" placeholder="Search" />
+                </div>
+            </div>
+        </div>
+        <div id="articles-list-wrapper">
+            <div id="articles-list-container" class="container-fluid">
+                <!--<div class="row">-->
+                    <!--<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">-->
+                        <div class="faq-article-container" id="faq-articles-container">
+                            <ul>
+                                <small-faq-article-list-item data-article="item" data-ng-repeat="item in faqArticleItems | kbSearchAllFields:search" data-ng-if="item.enabled"></small-faq-article-list-item>
+                            </ul>
+                        </div>
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+</div>

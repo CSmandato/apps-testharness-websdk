@@ -1,0 +1,127 @@
+#faq-content-container {
+
+  #content {
+    overflow-y: hidden;
+  }
+}
+
+#small-faq-articles-list-wrapper, #large-faq-labels-list-wrapper {
+
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  #search-field-wrapper {
+
+    background: #ccc;
+    position: absolute;
+    top: 0;
+    height: 50px;
+    left: 0;
+    right: 0;
+    padding: 0 10px;
+    display:table;
+    width:100%;
+
+    #search-field-container {
+
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+    }
+  }
+
+  #title-field-wrapper {
+
+    background: #e6e6e6;
+    position: absolute;
+    top: 0;
+    height: 50px;
+    left: 0;
+    right: 0;
+    padding: 0 10px;
+    display:table;
+    width:100%;
+
+    #title-field-container {
+
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  #articles-list-wrapper {
+
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+
+    #articles-list-container {
+      padding-left: 0;
+      padding-right: 0;
+
+      .article-list-item {
+        border-bottom: 1px dotted #ccc;
+        padding: 15px 15px;
+
+        .article-link-wrapper {
+          display: table;
+          width: 100%;
+          cursor: pointer;
+
+          .article-link-container {
+            display: table-cell;
+            vertical-align: middle;
+            width: 90%;
+          }
+
+          .article-more-icon-container {
+            display: table-cell;
+            vertical-align: middle;
+            width: 10%;
+
+            .fa {
+              color: #999;
+            }
+            .fa-fw {
+              text-align: right;
+            }
+          }
+        }
+      }
+
+      li:hover {
+        background: #f5f5f5;
+      }
+    }
+  }
+}
+
+#large-faq-labels-list-wrapper {
+
+  .label-folder-icon {
+    display: table-cell;
+    vertical-align: top;
+    width: 10%;
+    
+    i {
+      font-size: 16px;
+    }
+  }
+}
+
+#faq-article-container {
+  padding: 10px 15px;
+
+  p {
+    font-size: 14px;
+    color: #666;
+  }
+}

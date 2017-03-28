@@ -1,0 +1,13 @@
+<div id="history-wrapper">
+    <div id="history-container">
+    	<div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+		        <p data-ng-if="!loading && !historyItems.length" class="top-buffer side-buffer"> No conversations found</p>
+		        <ul data-ng-if="!loading && historyItems.length">
+		            <history-list-item data-ng-repeat="item in historyItems" data-item="item" data-ng-if="item.archived ==='0'"></history-list-item>
+		        </ul>
+		        <loading data-visible="loading"></loading>
+    		</div>
+		</div>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+.fc-header td {
+  padding: 15px 10px 5px !important;
+  vertical-align: middle; 
+}
+
+.fc-header-title h2 {
+  font-size: 20px;
+  margin: 0 10p;
+}
+.fc-header .fc-button {
+  margin-bottom: 0;
+}
+.fc-text-arrow {
+  line-height: .85em;
+}
+.fc-day-header {
+  background: #818188;
+  font-size: 11px;
+  color: #fff;
+  text-transform: uppercase;
+  border: 1px solid #818188;
+}
+.fc th {
+  padding: 3px;
+  border-bottom: 1px solid #818188;
+}
+.fc-content th,
+.fc-content td
+{
+  text-align:center;
+  vertical-align: middle;
+}
+.fc-day {
+  font-size: 14px;
+}
+.fc-day:not(.date-disabled):hover {
+  background: #e9f7eb;
+}
+.fc-day.date-disabled {
+  color: #cccccc;
+  background: #f2f4f3;
+}
+.date-disabled:hover {
+  background: #f5f5f5;
+}
+.fc-grid .fc-day-number {
+  float: none;
+  line-height: 46px;
+  cursor:default;
+}
+.fc-grid .fc-other-month.fc-past .fc-day-number {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.fc-selected {
+  background: #009b49;
+}
+.fc-selected .fc-day-number{
+  color: #fff;
+}
+.fc-today {
+  background: #009b49;
+  position: relative;
+}
+.fc-today .fc-day-number {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  line-height: 44px;
+  text-align: center;
+  vertical-align: middle;
+  background: #fff;
+  color: #333;
+  border: 2px solid #009b49;
+}
+.fc-today .fc-day-number:hover {
+  background: #ebebeb;
+}
+.fc-week.fc-first .fc-today .fc-day-number {
+  top: 0;
+  line-height: 43px;
+}
+.fc-today.date-disabled .fc-day-number {
+  background: #f2f4f3;
+}
+.fc-grid .fc-day-content {
+  display: none;
+}
+
+
+.cs-selected-date {
+  background: #009b49 !important;
+  color: #fff !important;
+}

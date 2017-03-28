@@ -1,0 +1,55 @@
+
+
+.article-content-container {
+
+  h2 {
+    font-size: 18px;
+  }
+
+
+}
+
+
+.article-feedback-bar-container {
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  display: table;
+  height: 100%;
+  width: 100%;
+  border-top: 1px solid #ddd;
+
+  .article-feedback-text-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    width: 75%;
+    padding-left: 10px;
+
+
+    .article-feedback-text-container {
+
+    }
+  }
+
+  .article-feedback-btns-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    width: 25%;
+    padding-right: 10px;
+
+
+    .article-feedback-btns-container {
+
+      a {
+        cursor: pointer;
+        margin-right: 5px;
+      }
+    }
+  }
+}

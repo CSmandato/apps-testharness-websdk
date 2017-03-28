@@ -1,0 +1,56 @@
+<div class="row" id="login-form-wrapper">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+        <div class="alert alert-danger" data-ng-if="error.msg !== ''">
+            <p>{{ error.msg }}</p>
+        </div>
+        <form id="login-form" name="login-form" data-ng-submit="login(user)" novalidate>
+
+            <!-- User Name -->
+            <div class="form-group">
+                <input id="name-input-field" type="text" name="name" class="form-control" placeholder="Name" data-ng-model="user.firstName" />
+            </div>
+
+            <!-- User Email -->
+            <div class="form-group">
+                <input id="email-input-field" type="text" name="email" class="form-control" placeholder="Email" data-ng-model="user.addrEmail" />
+            </div>
+
+            <!-- User Phone Number -->
+            <div class="form-group">
+                <input type="tel"
+                       id="phone-input-field"
+                       pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}"
+                       data-ng-model="user.phone"
+                       name="phone"
+                       class="form-control"
+                       placeholder="Phone# e.g.555-555-5555">
+            </div>
+
+            <!-- User Issue -->
+            <div class="form-group">
+                <textarea onkeydown="if (event.keyCode == 13) document.getElementById('login-submit').click()"
+                          id="topic-textarea-input"
+                          rows="3"
+                          class="form-control default-login-textarea"
+                          placeholder="Issue"
+                          data-ng-model="user.topic"></textarea>
+            </div>
+
+            <!-- User Description -->
+            <div class="form-group">
+                <textarea onkeydown="if (event.keyCode == 13) document.getElementById('login-submit').click()"
+                          id="description-textarea-input"
+                          rows="3"
+                          class="form-control default-login-textarea"
+                          placeholder="Description"
+                          data-ng-model="user.topicData"></textarea>
+            </div>
+
+            <!-- Login -->
+            <div class="form-group">
+                <input id="login-form-submit-btn" type="submit" class="btn btn-primary" value="Start Session" data-ng-disabled="loginInProgress"/>
+            </div>
+
+        </form>
+    </div>
+</div>

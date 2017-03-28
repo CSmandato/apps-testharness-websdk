@@ -1,0 +1,24 @@
+<div>
+  <navbar></navbar>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>{{ title }}</h3>
+        <p>{{ message }}</p>
+
+        <!-- Modal Error Template -->
+        <div data-ng-if="type === 'error'">
+            <button type="button" class="btn btn-default" data-ng-click="closeChat()">Close</button>
+        </div>
+
+        <!-- Modal Alert Template -->
+        <div data-ng-if="type === 'alert'">
+            <button type="button" class="btn btn-default" data-ng-click="closeChat()">Close</button>
+          <button type="button" class="btn btn-primary" data-ng-click="menu()">Menu</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <modal></modal>
+</div>

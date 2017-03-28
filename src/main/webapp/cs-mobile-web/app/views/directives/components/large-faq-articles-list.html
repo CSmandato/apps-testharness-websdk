@@ -1,0 +1,24 @@
+<div id="small-faq-articles-list-wrapper">
+    <div id="small-faq-articles-container">
+        <div id="title-field-wrapper">
+            <div id="title-field-container">
+                <div id="title-box">
+                    <h4 style="color: #000; margin: 0;">{{ label.labelText }}</h4>
+                </div>
+            </div>
+        </div>
+        <div id="articles-list-wrapper">
+            <div id="articles-list-container" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                        <div class="faq-article-container" id="faq-articles-container">
+                            <ul>
+                                <small-faq-article-list-item data-article="item" data-ng-repeat="item in faqArticleItems | kbSearchAllFields:search" data-ng-if="item.enabled"></small-faq-article-list-item>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

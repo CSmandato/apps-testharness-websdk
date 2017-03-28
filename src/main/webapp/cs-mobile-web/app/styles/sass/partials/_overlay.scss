@@ -1,0 +1,25 @@
+.overlay {
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99991;
+  height: 100%;
+  opacity: .8;
+  display: none;
+  background: white;
+  text-align:center;
+  padding: 20px;
+}
+
+.overlay-text {
+  z-index: 99992;
+  color: #444;
+  margin-top: 50%;
+}
+
+.overlay-error {
+  opacity: .98 !important;
+}

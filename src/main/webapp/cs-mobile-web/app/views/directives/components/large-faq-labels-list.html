@@ -1,0 +1,34 @@
+<div id="large-faq-labels-list-wrapper">
+    <div id="large-faq-labels-list-container">
+        <div id="search-field-wrapper">
+            <div id="search-field-container">
+                <div id="search-box">
+                    <input id="faq-search" type="text" class="form-control" data-ng-model="search.text" placeholder="Search" data-ng-required="true" />
+                </div>
+            </div>
+        </div>
+        <div id="articles-list-wrapper">
+            <div id="articles-list-container" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                        <div class="faq-article-container" id="faq-labels-container">
+                            <div class="faq-label-container" id="faq-label-container" data-ng-if="search.results === null">
+                                <ul>
+                                    <faq-label-list-item data-label="item" data-ng-repeat="item in faqLabelItems" data-ng-if="item.enabled"></faq-label-list-item>
+                                </ul>
+                            </div>
+                            <div class="faq-article-container" id="faq-articles-container" data-ng-if="search.results != null">
+                                <ul>
+                                    <li data-ng-if="search.text !== null && search.results.length === 0">
+                                        No articles found.
+                                    </li>
+                                    <small-faq-article-list-item data-article="item" data-ng-repeat="item in search.results" data-ng-if="item.enabled"></small-faq-article-list-item>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+.pp-btn {
+  cursor: pointer !important;
+}
+
+.pp-btn:hover {
+  background-color: #eee;
+}
+
+.pp-btn.ng-click-active {
+  background-color: $brand-warning;
+  color:$gray-darker;
+}
+
+.date-picker-text {
+
+  font-size: 12px;
+  background-color: #fff !important;
+  text-align: center;
+  color: #777;
+  font-weight: bold;
+}
+
+input.date-picker-text {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.self-service-menu-group {
+
+  padding: 10px;
+
+  a {
+    background-color: #f7f7f7;
+    color: #0e9c49;
+  }
+  @media screen and (max-width: 400px) {
+    a {
+      // font-weight: bold;
+    }
+  }
+
+  a:hover {
+    background-color: #0e9c49;
+    border: 1px solid #0e9c49;
+    color: white;
+  }
+
+  a:active, a:focus {
+    background-color: #0e9c49;
+    border: 1px solid #037a34;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: white;
+  }
+}

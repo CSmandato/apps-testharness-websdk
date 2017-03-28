@@ -1,0 +1,39 @@
+<div class="container-fluid" style="text-align: center">
+  <form class="form-inline" data-ng-submit="send()">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+
+        <div style="height: 45px;">
+          <div class="alert alert-danger" role="alert" data-ng-show="error" style="padding: 7px;">
+            <p>{{ errorMessage }}</p>
+          </div>
+        </div>
+
+        <!-- User Text Input -->
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xs-12" style="padding-left: 10px; padding-right: 10px;">
+              <div class="input-group" data-ng-class="error ? 'has-error' : ''">
+                <input style="background: #fff;"
+                       type="text"
+                       name="input-field"
+                       class="form-control"
+                       maxlength="{{ message.messageData.lengthMax }}"
+                       id="input-field"
+                       placeholder="Enter text value"
+                       data-ng-model="inputMessage"
+                       data-ng-keydown="enter($event)"
+                       required
+                       autofocus
+                  />
+                <span class="input-group-btn">
+                  <input class="btn" data-ng-class="error ? 'btn-danger' : 'btn-primary'" data-ng-disabled="sendBtnDisable"  type="submit" value="Send"/>
+                </span>
+              </div><!-- /input-group -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

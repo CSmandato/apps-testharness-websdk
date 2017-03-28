@@ -1,0 +1,39 @@
+<div class="container-fluid" style="text-align: center">
+  <form class="form-inline" data-ng-submit="send()">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+
+        <div style="height: 45px;">
+          <div class="alert alert-danger" role="alert" data-ng-show="error" style="padding: 7px;">
+            <p>{{ errorMessage }}</p>
+          </div>
+        </div>
+
+        <!-- User Phone Number -->
+        <div class="form-group">
+          <div class="row">
+            <label style="padding: 7px;" class="col-xs-6 col-xs-offset-1 control-label">Expiration Date:</label>
+            <div class="col-xs-4" style="padding-left: 10px; padding-right: 10px;" data-ng-class="error ? 'has-error' : ''">
+              <input type="text"
+                     style="background: #fff;"
+                     data-ng-model="number"
+                     name="cc_expiry"
+                     id="input-field"
+                     class="form-control"
+                     placeholder="MM/YY"
+                     data-ng-required="true"
+                     data-ng-readonly="mobile === true ? true : false"
+                     data-ng-keydown="enter($event)"
+                     autofocus
+              >
+            </div>
+          </div>
+        </div>
+
+        <product-numeric-only-keypad></product-numeric-only-keypad>
+      </div>
+    </div>
+
+
+  </form>
+</div>
